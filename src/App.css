@@ -1,0 +1,272 @@
+@import 'boxicons/css/boxicons.min.css';
+#root {
+	display: grid;
+	place-items: center;
+	height: 100vh;
+	box-sizing: border-box;
+	background-image: url('./assets/images/1351260.png');
+}
+.card {
+	width: 80vw;
+	height: 90vh;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	gap: 30px;
+	justify-content: center;
+}
+
+.card__title {
+	display: grid;
+	margin: 0;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 200px;
+	grid-column: 1 / 3;
+	grid-row: 1 / 1;
+	margin-top: 0; /* Ajusta el margen superior */
+	padding-top: 0; /* Ajusta el padding superior */
+	position: relative; /* Asegura que los elementos hijos puedan ser posicionados */
+}
+
+.card__title__city-country {
+	font-size: 2.4em;
+}
+
+.title__country--and--search {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 130px 70px;
+	padding-left: 30px;
+	width: 9px;
+}
+
+.card__title__search-bar {
+	margin-left: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-radius: 18px;
+}
+
+.card__title__search-bar input {
+	flex-grow: 1;
+	height: 30px;
+	padding: 0 10px;
+	font-size: 16px;
+	border: 1px solid transparent;
+	width: 20px;
+	background-color: rgba(255, 255, 255, 0.238);
+	border-radius: 10px;
+}
+
+.card__title__search-bar button {
+	height: 30px;
+	padding: 0 20px;
+	font-size: 15px;
+	border: 1px solid #ccc;
+	background-color: rgb(255, 255, 255);
+	color: white;
+	cursor: pointer;
+	border-radius: 80px;
+	color: black;
+}
+
+.card__title__search-bar button:hover {
+	background-color: #2e4b8b;
+}
+.card__title_icon {
+	justify-content: center;
+	align-items: center;
+	padding: 0%;
+	margin: 0;
+	margin-top: -50px;
+	margin-left: 30;
+	max-width: 75%;
+	padding-top: 50px;
+}
+.card__title__temperature {
+	display: grid;
+	height: 13%;
+	grid-column: 3 / 4;
+	grid-template-columns: repeat(3, 33.33%);
+	grid-template-rows: 140px 60px;
+	align-items: center; /* Centra verticalmente */
+	justify-items: center; /* Centra horizontalmente */
+
+	.card__title__temperature-now {
+		grid-column: 1 / 4;
+		grid-row: 1 / 2;
+		font-size: 7em;
+		align-self: center; /* Centra verticalmente */
+		text-align: center; /* Centra el texto horizontalmente */
+		padding-top: 10px;
+	}
+	.card__title__temperature-max {
+		grid-column: 1 / 2;
+		grid-row: 2 / 3;
+		display: grid;
+		justify-content: center;
+		font-size: 1em;
+		margin-top: -15px;
+	}
+	.card__title__temperature-min {
+		grid-column: 3 / 4;
+		grid-row: 2 / 3;
+		display: grid;
+		justify-content: center;
+		font-size: 1em;
+		text-align: center;
+		margin-top: -15px;
+	}
+	.card__title__temperature-feels {
+		grid-column: 2 / 3;
+		grid-row: 2 / 3;
+		display: grid;
+		justify-content: center;
+		font-size: 1em;
+		text-align: center;
+		margin-top: -15px;
+	}
+}
+
+.card__settings {
+	display: grid;
+	grid-column: 3 / 4;
+	grid-row: 1 / 2;
+	gap: 10px;
+}
+
+.card__dat {
+	display: grid;
+	grid-column: 1 / 4;
+	grid-row: 2 / 3;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.card__dat__wind {
+	grid-column: 1 / 2;
+}
+
+.card__dat2 {
+	display: grid;
+	grid-column: 1 / 4;
+	grid-row: 3 / 4;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.box {
+	padding: 2em;
+	background-color: rgba(255, 255, 255, 0.648);
+	border-radius: 40px;
+	min-height: 100px;
+	backdrop-filter: brightness(1.8) blur(4px);
+}
+
+.box:first-child {
+	padding: 0;
+	padding-right: 1.5em;
+}
+
+/* valores de la info cajas WIND, CLOUDS...  */
+.info-val {
+	font-size: 3em;
+	font-weight: bold;
+	color: rgba(0, 0, 0, 0.596);
+}
+
+.unit {
+	font-size: 1.3em;
+	font-weight: normal;
+	color: rgba(0, 0, 0, 0.332);
+}
+
+/* Media queries para diseño responsivo */
+@media (max-width: 1200px) {
+	.card__dat,
+	.card__dat2 {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.box {
+		padding: 1.5em;
+	}
+	.info-val {
+		font-size: 2.5em;
+	}
+	.unit {
+		font-size: 1.2em;
+	}
+	.card {
+		width: 90vw;
+		height: auto;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		gap: 20px;
+	}
+}
+
+@media (max-width: 768px) {
+	.card__dat,
+	.card__dat2 {
+		grid-template-columns: 1fr;
+	}
+	.box {
+		padding: 1em;
+	}
+	.info-val {
+		font-size: 2em;
+	}
+	.unit {
+		font-size: 1em;
+	}
+	.card {
+		width: 100vw;
+		height: auto;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+		gap: 10px;
+	}
+	.card__title {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+		grid-column: 1 / -1;
+	}
+	.title__country--and--search {
+		padding-left: 15px;
+		width: auto;
+	}
+}
+
+@media (max-width: 480px) {
+	.box {
+		padding: 0.5em;
+	}
+	.info-val {
+		font-size: 1.5em;
+	}
+	.unit {
+		font-size: 0.9em;
+	}
+	.card__title__city-country {
+		font-size: 1.8em;
+	}
+	.title__country--and--search {
+		padding-left: 10px;
+	}
+	.card {
+		width: 100vw; /* Fixed width */
+		height: 30vh;
+	}
+}
+
+/* Añadir un punto de quiebre para pantallas muy pequeñas */
+@media (max-width: 320px) {
+	.box {
+		padding: 0.25em;
+	}
+	.info-val {
+		font-size: 1.2em;
+	}
+	.unit {
+		font-size: 0.8em;
+	}
+}
